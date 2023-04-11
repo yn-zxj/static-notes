@@ -1,4 +1,4 @@
-import{_ as c,M as l,Y as k,a0 as s,a1 as n,Z as a,$ as r,a2 as e,C as o}from"./framework-0d8205ef.js";const u="/assets/system_variables-483616e8.png",d={},i=s("h2",{id:"_1-变量",tabindex:"-1"},[s("a",{class:"header-anchor",href:"#_1-变量","aria-hidden":"true"},"#"),n(" 1.变量")],-1),E=s("p",null,[n("  在 MySQL 数据库的存储过程和函数中，可以使用变量来存储查询或计算的中间结果数据，或者输出最终的结果数据。在 MySQL 数据库中，变量分为"),s("code",null,"系统变量"),n("以及用户"),s("code",null,"自定义变量"),n("。")],-1),m=s("h3",{id:"_1-1-系统变量",tabindex:"-1"},[s("a",{class:"header-anchor",href:"#_1-1-系统变量","aria-hidden":"true"},"#"),n(" 1.1 系统变量")],-1),y=s("p",null,"  变量由系统定义，不是用户定义，属于服务器层面。启动 MySQL 服务，生成 MySQL 服务实例期间，MySQL 将为 MySQL 服务器内存中的系统变量赋值，这些系统变量定义了当前 MySQL 服务实例的属性、特征。这些系统变量的值要么是编译 MySQL 时参数的默认值，要么是配置文件（例如 my.ini 等）中的参数值。",-1),w=s("br",null,null,-1),_={href:"https://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html",target:"_blank",rel:"noopener noreferrer"},L=s("br",null,null,-1),S={href:"https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html",target:"_blank",rel:"noopener noreferrer"},g=e('<p>  系统变量分为<mark>全局系统变量</mark>（需要添加 global 关键字）以及<mark>会话系统变量</mark>（需要添加 session 关键字），<u>有时也把全局系统变量简称为全局变量，有时也把会话系统变量称为 local 变量</u>。 如果不写，<mark>默认会话级别</mark>。 静态变量（在 MySQL 服务实例运行期间它们的值不能使用 set 动态修改）属于特殊的全局系统变量。<br>   在 MySQL 中有些系统变量只能是全局的，例如<code>max_connections</code>用于限制服务器的最大连接数；有些系统变量作用域既可以是全局又可以是会话，例如 <code>character_set_client</code>用于设置客户端的字符集；有些系统变量的作用域只能是当前会话，例如<code>pseudo_thread_id</code>用于标记当前会话的 MySQL 连接 ID。</p><div class="hint-container tip"><p class="hint-container-title">提示</p><p>每一个 MySQL 客户机成功连接 MySQL 服务器后，都会产生与之对应的会话。会话期间，MySQL 服务实例会在 MySQL 服务器内存中生成与该会话对应的会话系统变量，这些会话系统变量的初始值是全局系统变量值的复制。如下图：</p><figure><img src="'+u+`" alt="System Variables.png" width="450" tabindex="0" loading="lazy"><figcaption>System Variables.png</figcaption></figure><p>① 全局系统变量针对于所有会话(连接)有效，但<mark>不能跨重启</mark>；</p><p>② 会话 1 对某个全局系统变量值的修改会导致会话 2 中同一个全局系统变量值的修改。</p><p>③ 会话系统变量仅针对于当前会话(连接)有效。会话期间，当前会话对某个会话系统变量值的修改，不会影响其他会话同一个会话系统变量的值。</p></div><hr><p><strong>查看系统变量</strong>：</p><div class="language-sql" data-ext="sql"><pre class="language-sql"><code><span class="token comment"># GLOBAL：全局系统变量</span>
+import{_ as c,M as l,Y as k,a0 as s,a1 as n,Z as a,$ as r,a2 as e,C as o}from"./framework-0d8205ef.js";const d="/assets/system_variables-483616e8.png",u={},i=s("h2",{id:"_1-变量",tabindex:"-1"},[s("a",{class:"header-anchor",href:"#_1-变量","aria-hidden":"true"},"#"),n(" 1.变量")],-1),E=s("p",null,[n("  在 MySQL 数据库的存储过程和函数中，可以使用变量来存储查询或计算的中间结果数据，或者输出最终的结果数据。在 MySQL 数据库中，变量分为"),s("code",null,"系统变量"),n("以及用户"),s("code",null,"自定义变量"),n("。")],-1),y=s("h3",{id:"_1-1-系统变量",tabindex:"-1"},[s("a",{class:"header-anchor",href:"#_1-1-系统变量","aria-hidden":"true"},"#"),n(" 1.1 系统变量")],-1),m=s("p",null,"  变量由系统定义，不是用户定义，属于服务器层面。启动 MySQL 服务，生成 MySQL 服务实例期间，MySQL 将为 MySQL 服务器内存中的系统变量赋值，这些系统变量定义了当前 MySQL 服务实例的属性、特征。这些系统变量的值要么是编译 MySQL 时参数的默认值，要么是配置文件（例如 my.ini 等）中的参数值。",-1),w=s("br",null,null,-1),_={href:"https://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html",target:"_blank",rel:"noopener noreferrer"},L=s("br",null,null,-1),T={href:"https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html",target:"_blank",rel:"noopener noreferrer"},g=e('<p>  系统变量分为<mark>全局系统变量</mark>（需要添加 global 关键字）以及<mark>会话系统变量</mark>（需要添加 session 关键字），<u>有时也把全局系统变量简称为全局变量，有时也把会话系统变量称为 local 变量</u>。 如果不写，<mark>默认会话级别</mark>。 静态变量（在 MySQL 服务实例运行期间它们的值不能使用 set 动态修改）属于特殊的全局系统变量。<br>   在 MySQL 中有些系统变量只能是全局的，例如<code>max_connections</code>用于限制服务器的最大连接数；有些系统变量作用域既可以是全局又可以是会话，例如 <code>character_set_client</code>用于设置客户端的字符集；有些系统变量的作用域只能是当前会话，例如<code>pseudo_thread_id</code>用于标记当前会话的 MySQL 连接 ID。</p><div class="hint-container tip"><p class="hint-container-title">提示</p><p>每一个 MySQL 客户机成功连接 MySQL 服务器后，都会产生与之对应的会话。会话期间，MySQL 服务实例会在 MySQL 服务器内存中生成与该会话对应的会话系统变量，这些会话系统变量的初始值是全局系统变量值的复制。如下图：</p><figure><img src="'+d+`" alt="System Variables.png" width="450" tabindex="0" loading="lazy"><figcaption>System Variables.png</figcaption></figure><p>① 全局系统变量针对于所有会话(连接)有效，但<mark>不能跨重启</mark>；</p><p>② 会话 1 对某个全局系统变量值的修改会导致会话 2 中同一个全局系统变量值的修改。</p><p>③ 会话系统变量仅针对于当前会话(连接)有效。会话期间，当前会话对某个会话系统变量值的修改，不会影响其他会话同一个会话系统变量的值。</p></div><hr><p><strong>查看系统变量</strong>：</p><div class="language-sql" data-ext="sql"><pre class="language-sql"><code><span class="token comment"># GLOBAL：全局系统变量</span>
 <span class="token comment"># SESSION：会话系统变量</span>
 <span class="token keyword">SHOW</span> <span class="token punctuation">[</span><span class="token keyword">GLOBAL</span> <span class="token operator">|</span> <span class="token keyword">SESSION</span><span class="token punctuation">]</span> VARIABLES <span class="token punctuation">[</span><span class="token operator">LIKE</span> <span class="token string">&#39;pattern&#39;</span> <span class="token operator">|</span> <span class="token keyword">WHERE</span> expr<span class="token punctuation">]</span><span class="token punctuation">;</span>
 
@@ -38,7 +38,7 @@ import{_ as c,M as l,Y as k,a0 as s,a1 as n,Z as a,$ as r,a2 as e,C as o}from"./
 
 <span class="token keyword">SET</span> @<span class="token variable">@GLOBAL</span> auto_increment_offset <span class="token operator">=</span> <span class="token string">&#39;2&#39;</span><span class="token punctuation">;</span>
 <span class="token keyword">SET</span> <span class="token keyword">GLOBAL</span> auto_increment_offset <span class="token operator">=</span> <span class="token string">&#39;3&#39;</span><span class="token punctuation">;</span>
-</code></pre></div><h3 id="_1-2-用户变量" tabindex="-1"><a class="header-anchor" href="#_1-2-用户变量" aria-hidden="true">#</a> 1.2 用户变量</h3><p>  用户变量是用户自己定义的，作为 MySQL 编码规范，MySQL 中的用户变量以一个<code>@</code>开头。根据作用范围不同，又分为<mark>会话用户变量</mark>和<mark>局部变量</mark>。</p><blockquote><p>会话用户变量：作用域和会话变量一样，只对当前连接会话有效<br> 局部变量：只在<code>BEGIN</code>和<code>END</code>语句块中有效。<mark>局部变量只能在存储过程和函数中使用</mark></p></blockquote>`,19),T=s("br",null,null,-1),b={href:"https://dev.mysql.com/doc/refman/5.7/en/user-variables.html",target:"_blank",rel:"noopener noreferrer"},v=s("br",null,null,-1),h={href:"https://dev.mysql.com/doc/refman/8.0/en/user-variables.html",target:"_blank",rel:"noopener noreferrer"},N=e(`<h4 id="_1-2-1-用户会话变量" tabindex="-1"><a class="header-anchor" href="#_1-2-1-用户会话变量" aria-hidden="true">#</a> 1.2.1 用户会话变量</h4><p><strong>变量的定义</strong>：</p><div class="language-sql" data-ext="sql"><pre class="language-sql"><code><span class="token comment"># 方式一： = 或 :=</span>
+</code></pre></div><h3 id="_1-2-用户变量" tabindex="-1"><a class="header-anchor" href="#_1-2-用户变量" aria-hidden="true">#</a> 1.2 用户变量</h3><p>  用户变量是用户自己定义的，作为 MySQL 编码规范，MySQL 中的用户变量以一个<code>@</code>开头。根据作用范围不同，又分为<mark>会话用户变量</mark>和<mark>局部变量</mark>。</p><blockquote><p>会话用户变量：作用域和会话变量一样，只对当前连接会话有效<br> 局部变量：只在<code>BEGIN</code>和<code>END</code>语句块中有效。<mark>局部变量只能在存储过程和函数中使用</mark></p></blockquote>`,19),h=s("br",null,null,-1),b={href:"https://dev.mysql.com/doc/refman/5.7/en/user-variables.html",target:"_blank",rel:"noopener noreferrer"},S=s("br",null,null,-1),v={href:"https://dev.mysql.com/doc/refman/8.0/en/user-variables.html",target:"_blank",rel:"noopener noreferrer"},N=e(`<h4 id="_1-2-1-用户会话变量" tabindex="-1"><a class="header-anchor" href="#_1-2-1-用户会话变量" aria-hidden="true">#</a> 1.2.1 用户会话变量</h4><p><strong>变量的定义</strong>：</p><div class="language-sql" data-ext="sql"><pre class="language-sql"><code><span class="token comment"># 方式一： = 或 :=</span>
 <span class="token keyword">SET</span> @用户变量 <span class="token operator">=</span> 值<span class="token punctuation">;</span>
 <span class="token keyword">SET</span> @用户变量 :<span class="token operator">=</span> 值<span class="token punctuation">;</span>
 
@@ -284,7 +284,7 @@ mysql<span class="token operator">&gt;</span> <span class="token keyword">SELECT
     <span class="token punctuation">[</span><span class="token keyword">WHEN</span> search_condition <span class="token keyword">THEN</span> statement_list<span class="token punctuation">]</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
     <span class="token punctuation">[</span><span class="token keyword">ELSE</span> statement_list<span class="token punctuation">]</span>
 <span class="token keyword">END</span> <span class="token keyword">CASE</span>
-</code></pre></div>`,70),R=s("code",null,"CASE",-1),C=s("code",null,"END",-1),A=s("code",null,"END CASE",-1),I=e(`<p>示例：</p><div class="language-sql" data-ext="sql"><pre class="language-sql"><code><span class="token comment"># 方式一</span>
+</code></pre></div>`,70),I=s("code",null,"CASE",-1),R=s("code",null,"END",-1),q=s("code",null,"END CASE",-1),A=e(`<p>示例：</p><div class="language-sql" data-ext="sql"><pre class="language-sql"><code><span class="token comment"># 方式一</span>
 <span class="token keyword">DELIMITER</span> <span class="token comment">//</span>
 
 <span class="token keyword">CREATE</span> <span class="token keyword">PROCEDURE</span> test_case<span class="token punctuation">(</span><span class="token operator">IN</span> num <span class="token keyword">INT</span><span class="token punctuation">)</span>
@@ -317,4 +317,141 @@ mysql<span class="token operator">&gt;</span> <span class="token keyword">SELECT
 
 <span class="token comment"># 调用</span>
 <span class="token keyword">CALL</span> test_case<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre></div>`,2);function q(O,D){const p=o("ExternalLinkIcon"),t=o("RouterLink");return l(),k("div",null,[i,E,m,y,s("blockquote",null,[s("p",null,[n("系统变量官方文档："),w,n(" MySQL 5.7："),s("a",_,[n("https://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html"),a(p)]),L,n(" MySQL 8.0："),s("a",S,[n("https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html"),a(p)])])]),g,s("p",null,[n("官方文档："),T,n(" MySQL 5.7："),s("a",b,[n("https://dev.mysql.com/doc/refman/5.7/en/user-variables.html"),a(p)]),v,n(" MySQL 8.0："),s("a",h,[n("https://dev.mysql.com/doc/refman/8.0/en/user-variables.html"),a(p)])]),N,s("blockquote",null,[s("p",null,[n("与"),a(t,{to:"/backend/database/base/one_line_function.html#_5-%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6%E5%87%BD%E6%95%B0"},{default:r(()=>[n("流程控制函数")]),_:1}),n("中的"),R,n("稍微有点区别：结尾一个为"),C,n("，一个为"),A])]),I])}const x=c(d,[["render",q],["__file","variable_flow_cursor.html.vue"]]);export{x as default};
+</code></pre></div><h3 id="_3-3-循环结构-loop" tabindex="-1"><a class="header-anchor" href="#_3-3-循环结构-loop" aria-hidden="true">#</a> 3.3 循环结构(LOOP)</h3><p>语法结构：</p><div class="language-sql" data-ext="sql"><pre class="language-sql"><code><span class="token punctuation">[</span>loop_label:<span class="token punctuation">]</span> <span class="token keyword">LOOP</span>
+    statement_list
+<span class="token keyword">END</span> <span class="token keyword">LOOP</span> <span class="token punctuation">[</span>loop_label<span class="token punctuation">]</span>
+</code></pre></div><blockquote><p>LOOP 循环语句用来重复执行某些语句。LOOP 内的语句一直重复执行直到被退出(使用 LEAVE 子句)，跳出循环。</p></blockquote><p>示例：使用 LOOP 语句进行循环操作，id 值小于 10 时将重复执行循环过程</p><div class="language-sql" data-ext="sql"><pre class="language-sql"><code><span class="token keyword">DELIMITER</span> <span class="token comment">//</span>
+
+<span class="token keyword">CREATE</span> <span class="token keyword">PROCEDURE</span> loop_test<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">BEGIN</span>
+  <span class="token keyword">DECLARE</span> id <span class="token keyword">INT</span> <span class="token keyword">DEFAULT</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  add_loop: <span class="token keyword">LOOP</span>
+    <span class="token keyword">SET</span> id <span class="token operator">=</span> id <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">IF</span> id <span class="token operator">&gt;=</span> <span class="token number">10</span> <span class="token keyword">THEN</span> <span class="token keyword">LEAVE</span> add_loop<span class="token punctuation">;</span>
+    <span class="token keyword">END</span> <span class="token keyword">IF</span><span class="token punctuation">;</span>
+  <span class="token keyword">END</span> <span class="token keyword">LOOP</span> add_loop<span class="token punctuation">;</span>
+
+  <span class="token keyword">SELECT</span> id<span class="token punctuation">;</span>
+<span class="token keyword">END</span> <span class="token comment">//</span>
+
+<span class="token keyword">DELIMITER</span> <span class="token punctuation">;</span>
+
+mysql<span class="token operator">&gt;</span> <span class="token keyword">CALL</span> loop_test<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">----+</span>
+<span class="token operator">|</span> id <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----+</span>
+<span class="token operator">|</span> <span class="token number">10</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----+</span>
+<span class="token number">1</span> <span class="token keyword">row</span> <span class="token operator">in</span> <span class="token keyword">set</span> <span class="token punctuation">(</span><span class="token number">0.01</span> sec<span class="token punctuation">)</span>
+</code></pre></div><h3 id="_3-4-循环结构-while" tabindex="-1"><a class="header-anchor" href="#_3-4-循环结构-while" aria-hidden="true">#</a> 3.4 循环结构(WHILE)</h3><p>语法结构：</p><div class="language-sql" data-ext="sql"><pre class="language-sql"><code><span class="token punctuation">[</span>while_label:<span class="token punctuation">]</span> <span class="token keyword">WHILE</span> cycle_condition <span class="token keyword">DO</span>
+    statement_list
+<span class="token keyword">END</span> <span class="token keyword">WHILE</span> <span class="token punctuation">[</span>while_label<span class="token punctuation">]</span>
+</code></pre></div><blockquote><p>WHILE 语句创建一个带条件判断的循环过程。WHILE 在执行语句执行时，先对指定的表达式进行判断，如果为真，就执行循环内的语句，否则退出循环。</p></blockquote><p>示例：使用 WHILE 语句进行循环操作，id 值小于 10 时将重复执行循环过程</p><div class="language-sql" data-ext="sql"><pre class="language-sql"><code><span class="token keyword">DELIMITER</span> <span class="token comment">//</span>
+
+<span class="token keyword">CREATE</span> <span class="token keyword">PROCEDURE</span> while_test<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">BEGIN</span>
+  <span class="token keyword">DECLARE</span> id <span class="token keyword">INT</span> <span class="token keyword">DEFAULT</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  while_loop: <span class="token keyword">WHILE</span> id <span class="token operator">&lt;</span> <span class="token number">10</span> <span class="token keyword">DO</span>
+    <span class="token keyword">SET</span> id <span class="token operator">=</span> id <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token keyword">END</span> <span class="token keyword">WHILE</span> while_loop<span class="token punctuation">;</span>
+
+  <span class="token keyword">SELECT</span> id<span class="token punctuation">;</span>
+<span class="token keyword">END</span> <span class="token comment">//</span>
+
+<span class="token keyword">DELIMITER</span> <span class="token punctuation">;</span>
+
+mysql<span class="token operator">&gt;</span> <span class="token keyword">CALL</span> while_test<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">----+</span>
+<span class="token operator">|</span> id <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----+</span>
+<span class="token operator">|</span> <span class="token number">10</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----+</span>
+<span class="token number">1</span> <span class="token keyword">row</span> <span class="token operator">in</span> <span class="token keyword">set</span> <span class="token punctuation">(</span><span class="token number">0.01</span> sec<span class="token punctuation">)</span>
+</code></pre></div><h3 id="_3-5-循环结构-repeat" tabindex="-1"><a class="header-anchor" href="#_3-5-循环结构-repeat" aria-hidden="true">#</a> 3.5 循环结构(REPEAT)</h3><p>语法结构：</p><div class="language-sql" data-ext="sql"><pre class="language-sql"><code><span class="token punctuation">[</span>repeat_label:<span class="token punctuation">]</span> <span class="token keyword">REPEAT</span>
+    statement_list
+UNTIL end_condition
+<span class="token keyword">END</span> <span class="token keyword">REPEAT</span> <span class="token punctuation">[</span>repeat_label<span class="token punctuation">]</span>
+</code></pre></div><blockquote><p>REPEAT 语句创建一个带条件判断的循环过程。<mark>与 WHILE 循环不同的是，REPEAT 循环首先会执行一次循环</mark>，然后在 UNTIL 中进行表达式的判断，如果满足条件就退出，即 END REPEAT；如果条件不满足，则会就继续执行循环，直到满足退出条件为止。</p></blockquote><p>示例：</p><div class="language-sql" data-ext="sql"><pre class="language-sql"><code><span class="token keyword">DELIMITER</span> <span class="token comment">//</span>
+
+<span class="token keyword">CREATE</span> <span class="token keyword">PROCEDURE</span> repeat_test<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">BEGIN</span>
+  <span class="token keyword">DECLARE</span> id <span class="token keyword">INT</span> <span class="token keyword">DEFAULT</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  repeat_loop: <span class="token keyword">REPEAT</span>
+    <span class="token keyword">SET</span> id <span class="token operator">=</span> id <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    UNTIL id <span class="token operator">&gt;=</span> <span class="token number">10</span>
+  <span class="token keyword">END</span> <span class="token keyword">REPEAT</span> repeat_loop<span class="token punctuation">;</span>
+
+  <span class="token keyword">SELECT</span> id<span class="token punctuation">;</span>
+<span class="token keyword">END</span> <span class="token comment">//</span>
+
+<span class="token keyword">DELIMITER</span> <span class="token punctuation">;</span>
+
+mysql<span class="token operator">&gt;</span> <span class="token keyword">CALL</span> repeat_test<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">----+</span>
+<span class="token operator">|</span> id <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----+</span>
+<span class="token operator">|</span> <span class="token number">10</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----+</span>
+<span class="token number">1</span> <span class="token keyword">row</span> <span class="token operator">in</span> <span class="token keyword">set</span> <span class="token punctuation">(</span><span class="token number">0.01</span> sec<span class="token punctuation">)</span>
+</code></pre></div><hr><h4 id="对比三种循环结构" tabindex="-1"><a class="header-anchor" href="#对比三种循环结构" aria-hidden="true">#</a> 对比三种循环结构</h4><table><thead><tr><th>关键字</th><th>说明</th></tr></thead><tbody><tr><td><code>LOOP</code></td><td>一般用于实现简单的&quot;死&quot;循环</td></tr><tr><td><code>WHILE</code></td><td>先判断后执行</td></tr><tr><td><code>REPEAT</code></td><td>先执行后判断，无条件至少执行一次</td></tr></tbody></table><blockquote><p>这三种循环都可以省略名称，但如果循环中添加了循环控制语句(<code>LEAVE或ITERATE</code>)则必须添加名称</p></blockquote><h3 id="_3-6-跳转语句-leave" tabindex="-1"><a class="header-anchor" href="#_3-6-跳转语句-leave" aria-hidden="true">#</a> 3.6 跳转语句(LEAVE)</h3><p>语法结构：</p><div class="language-sql" data-ext="sql"><pre class="language-sql"><code><span class="token keyword">LEAVE</span> label
+</code></pre></div><blockquote><p>可以用在循环语句内，或者以<code>BEGIN ... END</code> 包裹起来的程序体内，表示跳出循环或跳出程序题的操作。如果你有面向过程的编写语言的经验，可以把<code>LEAVE</code>理解为<code>break</code>。</p></blockquote><p>示例：</p><p>当市场环境不好时，公司为了渡过难关，决定暂时降低大家的薪资。声明存储过程 leave_while()，声明 OUT 参数 num，输出循环次数，存储过程中使用 WHILE 循环给大家降低薪资为原来薪资的 90%，直到全公司的平均薪资小于等于 10000 ，并统计循环次数</p><div class="language-sql" data-ext="sql"><pre class="language-sql"><code><span class="token keyword">DELIMITER</span> <span class="token comment">//</span>
+
+<span class="token keyword">CREATE</span> <span class="token keyword">PROCEDURE</span> leave_while<span class="token punctuation">(</span><span class="token keyword">OUT</span> num <span class="token keyword">INT</span><span class="token punctuation">)</span>
+<span class="token keyword">BEGIN</span>
+  <span class="token keyword">DECLARE</span> avg_sal <span class="token keyword">DOUBLE</span><span class="token punctuation">;</span>
+  <span class="token keyword">DECLARE</span> while_count <span class="token keyword">INT</span> <span class="token keyword">DEFAULT</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">SELECT</span> <span class="token function">AVG</span><span class="token punctuation">(</span>salary<span class="token punctuation">)</span> <span class="token keyword">INTO</span> avg_sal <span class="token keyword">FROM</span> employees<span class="token punctuation">;</span> <span class="token comment"># ① 初始化条件</span>
+
+  while_label: <span class="token keyword">WHILE</span> <span class="token boolean">TRUE</span> <span class="token keyword">DO</span> <span class="token comment"># ② 循环条件</span>
+    <span class="token comment"># ③ 循环体</span>
+    <span class="token keyword">IF</span> avg_sal <span class="token operator">&lt;=</span> <span class="token number">10000</span> <span class="token keyword">THEN</span>
+        <span class="token keyword">LEAVE</span> while_label<span class="token punctuation">;</span>
+    <span class="token keyword">END</span> <span class="token keyword">IF</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">UPDATE</span> employees <span class="token keyword">SET</span> salary <span class="token operator">=</span> salary <span class="token operator">*</span> <span class="token number">0.9</span><span class="token punctuation">;</span>
+    <span class="token keyword">SET</span> while_count <span class="token operator">=</span> while_count <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">SELECT</span> <span class="token function">AVG</span><span class="token punctuation">(</span>salary<span class="token punctuation">)</span> <span class="token keyword">INTO</span> avg_sal <span class="token keyword">FROM</span> employees<span class="token punctuation">;</span> <span class="token comment"># ④ 迭代条件</span>
+  <span class="token keyword">END</span> <span class="token keyword">WHILE</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">SET</span> num <span class="token operator">=</span> while_count<span class="token punctuation">;</span>
+<span class="token keyword">END</span> <span class="token comment">//</span>
+
+<span class="token keyword">DELIMITER</span> <span class="token punctuation">;</span>
+
+<span class="token comment"># 调用</span>
+<span class="token keyword">CALL</span> leave_while<span class="token punctuation">(</span><span class="token variable">@num</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">SELECT</span> <span class="token variable">@num</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="_3-7-跳转语句-iterate" tabindex="-1"><a class="header-anchor" href="#_3-7-跳转语句-iterate" aria-hidden="true">#</a> 3.7 跳转语句(ITERATE)</h3><p>语法结构：</p><div class="language-sql" data-ext="sql"><pre class="language-sql"><code><span class="token keyword">ITERATE</span> label
+</code></pre></div><blockquote><p>只能用在循环语句<code>LOOP</code>、<code>REPEAT</code> 和 <code>WHILE</code>语句内，表示重新开始循环，将执行顺序转到语句段开头处。如果你有面向过程的编程语言的使用经验，你可以把<code>ITERATE</code>理解为<code>continue</code>。</p></blockquote><p>示例：</p><p>定义局部变量 num，初始值为 0。循环结构中执行 num + 1 操作：<br>  如果 num &lt; 10，则继续执行循环；<br>  如果 num &gt; 15，则退出循环结构；</p><div class="language-sql" data-ext="sql"><pre class="language-sql"><code><span class="token keyword">DELIMITER</span> <span class="token comment">//</span>
+
+<span class="token keyword">CREATE</span> <span class="token keyword">PROCEDURE</span> iterate_test<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">BEGIN</span>
+  <span class="token keyword">DECLARE</span> num <span class="token keyword">INT</span> <span class="token keyword">DEFAULT</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  loop_label: <span class="token keyword">LOOP</span>
+    <span class="token keyword">SET</span> num <span class="token operator">=</span> num <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">IF</span> num <span class="token operator">&lt;</span> <span class="token number">10</span> <span class="token keyword">THEN</span>
+      <span class="token keyword">ITERATE</span> loop_label<span class="token punctuation">;</span>
+    <span class="token keyword">ELSEIF</span> num <span class="token operator">&gt;</span> <span class="token number">15</span> <span class="token keyword">THEN</span>
+      <span class="token keyword">LEAVE</span> loop_label<span class="token punctuation">;</span>
+    <span class="token keyword">END</span> <span class="token keyword">IF</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">SELECT</span> <span class="token string">&#39;Learning MySQL!&#39;</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">END</span> <span class="token keyword">LOOP</span> loop_label<span class="token punctuation">;</span>
+<span class="token keyword">END</span> <span class="token comment">//</span>
+
+<span class="token keyword">DELIMITER</span> <span class="token punctuation">;</span>
+
+<span class="token comment"># 调用：当 num &gt;= 10 且 num &lt;= 15 时打印&quot;Learning MySQL!&quot;</span>
+<span class="token keyword">CALL</span> iterate_test<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment"># 打印六次</span>
+</code></pre></div><h2 id="_4-游标" tabindex="-1"><a class="header-anchor" href="#_4-游标" aria-hidden="true">#</a> 4.游标</h2><h3 id="_4-1-什么是游标" tabindex="-1"><a class="header-anchor" href="#_4-1-什么是游标" aria-hidden="true">#</a> 4.1 什么是游标</h3><h3 id="_4-2-使用游标" tabindex="-1"><a class="header-anchor" href="#_4-2-使用游标" aria-hidden="true">#</a> 4.2 使用游标</h3><h3 id="_4-3-案例" tabindex="-1"><a class="header-anchor" href="#_4-3-案例" aria-hidden="true">#</a> 4.3 案例</h3><h3 id="_4-4-小结" tabindex="-1"><a class="header-anchor" href="#_4-4-小结" aria-hidden="true">#</a> 4.4 小结</h3><h2 id="补充-mysql-8-0-新特性" tabindex="-1"><a class="header-anchor" href="#补充-mysql-8-0-新特性" aria-hidden="true">#</a> 补充 MySQL 8.0 新特性</h2><h3 id="全局变量持久化" tabindex="-1"><a class="header-anchor" href="#全局变量持久化" aria-hidden="true">#</a> 全局变量持久化</h3><p>  在数据库中，全局变量可以通过<code>SET GLOBAL</code>语句来设置，但是设置的变量值只会<mark>临时生效</mark>，当数据库重启后，服务器又会从 MySQL 配置文件中读取变量的默认值。在 MySQL 8.0 中新增了<code>SET PERSIST</code>命令来进行持久化设置。使用该命令会将配置保存到数据目录下的<code>mysqld-auto.cnf</code>文件中，下次启动时会读取该文件，用其中的配置来覆盖默认配置。</p><p>例如：设置服务器的最大连接数为 1000</p><div class="language-sql" data-ext="sql"><pre class="language-sql"><code><span class="token keyword">SET</span> PERSIST <span class="token keyword">global</span> max_connections <span class="token operator">=</span> <span class="token number">1000</span> <span class="token punctuation">;</span>
+<span class="token keyword">SET</span> @<span class="token variable">@PERSIST.max_connections</span> <span class="token operator">=</span> <span class="token number">1000</span><span class="token punctuation">;</span>
+</code></pre></div><p>删除持久化的全局系统变量设置：</p><div class="language-sql" data-ext="sql"><pre class="language-sql"><code>RESET PERSIST <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token keyword">IF</span> <span class="token keyword">EXISTS</span><span class="token punctuation">]</span> system_var_name<span class="token punctuation">]</span>
+
+<span class="token comment"># 例如</span>
+<span class="token comment">-- 删除所有持久化变量</span>
+RESET PERSIST<span class="token punctuation">;</span>
+<span class="token comment">-- 删除持久化变量max_connections</span>
+RESET PERSIST <span class="token keyword">IF</span> <span class="token keyword">EXISTS</span> max_connections<span class="token punctuation">;</span>
+</code></pre></div>`,50);function C(D,O){const p=o("ExternalLinkIcon"),t=o("RouterLink");return l(),k("div",null,[i,E,y,m,s("blockquote",null,[s("p",null,[n("系统变量官方文档："),w,n(" MySQL 5.7："),s("a",_,[n("https://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html"),a(p)]),L,n(" MySQL 8.0："),s("a",T,[n("https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html"),a(p)])])]),g,s("p",null,[n("官方文档："),h,n(" MySQL 5.7："),s("a",b,[n("https://dev.mysql.com/doc/refman/5.7/en/user-variables.html"),a(p)]),S,n(" MySQL 8.0："),s("a",v,[n("https://dev.mysql.com/doc/refman/8.0/en/user-variables.html"),a(p)])]),N,s("blockquote",null,[s("p",null,[n("与"),a(t,{to:"/backend/database/base/one_line_function.html#_5-%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6%E5%87%BD%E6%95%B0"},{default:r(()=>[n("流程控制函数")]),_:1}),n("中的"),I,n("稍微有点区别：结尾一个为"),R,n("，一个为"),q])]),A])}const x=c(u,[["render",C],["__file","variable_flow_cursor.html.vue"]]);export{x as default};
