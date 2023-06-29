@@ -1,0 +1,10 @@
+import{_ as n,o as a,c as s,a as e}from"./app-140f6a29.js";const t={},c=e(`<h2 id="目录" tabindex="-1"><a class="header-anchor" href="#目录" aria-hidden="true">#</a> 目录</h2><div class="project-panel-custom"><a class="project project0" href="./vue/" target="_self"><span class="image font-icon icon iconfont better-vue"></span><div class="name">Vue</div><div class="desc">渐进式 JavaScript 框架</div></a><a class="project project1" href="./typescript/" target="_self"><span class="image font-icon icon iconfont better-typescript"></span><div class="name">TypeScript</div><div class="desc">具有类型语法的JavaScript</div></a><div class="language-yaml line-numbers-mode" data-ext="yml"><pre class="language-yaml"><code><span class="token punctuation">-</span> <span class="token key atrule">icon</span><span class="token punctuation">:</span> vue
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> Vue
+  <span class="token key atrule">desc</span><span class="token punctuation">:</span> 渐进式 JavaScript 框架
+  <span class="token key atrule">link</span><span class="token punctuation">:</span> ./vue/
+
+<span class="token punctuation">-</span> <span class="token key atrule">icon</span><span class="token punctuation">:</span> typescript
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> TypeScript
+  <span class="token key atrule">desc</span><span class="token punctuation">:</span> 具有类型语法的JavaScript
+  <span class="token key atrule">link</span><span class="token punctuation">:</span> ./typescript/
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></div>`,2),i=[c];function l(p,o){return a(),s("div",null,i)}const d=n(t,[["render",l],["__file","index.html.vue"]]);export{d as default};
