@@ -1,0 +1,1 @@
+import{_ as a,o as t,c,f as e,i as o}from"./app-718e4016.js";const r={},s=e("h2",{id:"web",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#web","aria-hidden":"true"},"#"),o(" Web")],-1),n=[s];function _(d,i){return t(),c("div",null,n)}const l=a(r,[["render",_],["__file","java-web.html.vue"]]);export{l as default};
